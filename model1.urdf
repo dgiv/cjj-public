@@ -1,0 +1,45 @@
+<robot name="model1">
+    <link name="link1">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="1 1 1" />
+        </geometry>
+        <material>
+            <color rgba="1 1 0" />
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <cylinder radius="1" length="0.5" />
+        </geometry>
+    </collision>
+    </link>
+    <link name="link2">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.5 0.5 0.5" />
+            </geometry>
+            <material>
+                <color rgba="0 0 1" />
+            </material>
+        </visual>
+    
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.5" length="0.5" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="joint1" type="continuous">
+        <axis xyz="0 0 1">
+        <parent link="link1" />
+        <child link="link2" />
+        <origin rpy="0 1.57075 0" xyz="0 0 0">
+    </joint>
+</robot>
